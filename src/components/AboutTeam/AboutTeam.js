@@ -1,66 +1,70 @@
-import React from 'react';
-import './AboutTeam.css';
-
+import React from "react";
+import "./AboutTeam.css";
+import indiaGate from "../../assets/images/aboutTeam/india-gate.png";
+import teamImage from "../../assets/images/aboutTeam/team.svg";
 const AboutTeam = () => {
-  const teamMembers = [
-    { name: 'omma shwirshi', role: 'Services/Film Production' },
-    { name: 'kudeep loihi', role: 'V Films' },
-    { name: 'Produm Prajapati', role: 'Services/Premuing' },
-    { name: 'Suraj khatri', role: 'Services/Art Curation' }
-  ];
-
   return (
     <section className="about-team" id="about-team">
+      <div className="sticky-note">
+        <p>
+          Some craft films. Some build brands. Some curate art. We bring it all
+          together – a collective of storytellers driven by one belief: every
+          project deserves to be more than just a message; it should become a
+          masterpiece.
+        </p>
+        <p>
+          From first spark to final frame, from raw ideas to timeless visuals –
+          we shape stories that stay with you.
+        </p>
+      </div>
+
       <div className="container">
-        <h2 className="section-title">About Team</h2>
-        <div className="team-content">
-          <div className="team-intro">
-            <h3>V Films</h3>
-            <p>
-              Some craft films. Some build brands. Some curate art. We bring it all together – 
-              a collective of storytellers driven by one belief: every project deserves to be 
-              more than just a message; it should become a masterpiece.
-            </p>
-            <p>
-              From first spark to final frame, from raw ideas to timeless visuals – we shape 
-              stories that stay with you.
-            </p>
-          </div>
-          
-          <div className="team-grid">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="team-member">
-                <div className="member-image">
-                  {/* Add image here - export from Figma */}
-                  <div className="image-placeholder">
-                    {member.name.charAt(0)}
-                  </div>
-                </div>
-                <div className="member-info">
-                  <h4>{member.name}</h4>
-                  <p>{member.role}</p>
-                </div>
+        <div className="india-gate">
+          <img src={indiaGate} alt="India Gate Icon" />
+        </div>
+        <div className="about-content">
+          {/* Left Side - India Gate */}
+
+          {/* Center Content */}
+          <div className="team-content">
+            {/* Team Roles */}
+            <div className="team-roles">
+              <div className="role film-makers">
+                <span>Film Makers</span>
               </div>
-            ))}
-          </div>
 
-          <div className="team-divider"></div>
+              <img
+                src={teamImage}
+                alt="Team Illustration"
+                className="team-illustration"
+              />
 
-          <div className="team-expertise">
-            <div className="expertise-item">
-              <h4>Thinking</h4>
-              <p>Film Makers</p>
+              <div className="role art-curators">
+                <span>Art Curators</span>
+              </div>
             </div>
-            <div className="expertise-item">
-              <h4>Art Exercises</h4>
-              <ul>
-                <li>Burning Experts</li>
-              </ul>
-              <p>Take a closer look at the stories we bring to life.</p>
-            </div>
-          </div>
 
-          <button className="portfolio-btn">View Portfolio</button>
+            {/* Team Description */}
+            <div className="branding-experts">
+              <span>Branding Experts</span>
+            </div>
+
+            {/* Call to Action */}
+            <p className="cta-text">
+              Take a closer look at the stories V bring to life.
+            </p>
+            <button
+              className="view-portfolio"
+              onClick={() => {
+                const section = document.getElementById("portfolio");
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
+              View Portfolio
+            </button>
+          </div>
         </div>
       </div>
     </section>

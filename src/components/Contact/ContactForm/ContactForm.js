@@ -1,7 +1,8 @@
-import React from 'react';
-import { useForm } from '../../../hooks/useForm';
-import { submitContactForm } from '../../../services/api';
-import './ContactForm.css';
+// src/components/Contact/ContactForm/ContactForm.js
+import React from "react";
+import { useForm } from "../../../hooks/useForm";
+import { submitContactForm } from "../../../services/api";
+import "./ContactForm.css";
 
 const ContactForm = () => {
   const {
@@ -12,15 +13,15 @@ const ContactForm = () => {
     touched,
     handleChange,
     handleBlur,
-    handleSubmit
+    handleSubmit,
   } = useForm({
     initialValues: {
-      name: '',
-      email: '',
-      phone: '',
-      message: ''
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
     },
-    onSubmit: submitContactForm
+    onSubmit: submitContactForm,
   });
 
   return (
@@ -33,7 +34,9 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             onBlur={handleBlur}
-            className={`form-input ${errors.name ? 'error' : ''} ${touched.name && !errors.name ? 'valid' : ''}`}
+            className={`form-input ${errors.name ? "error" : ""} ${
+              touched.name && !errors.name ? "valid" : ""
+            }`}
             placeholder="Your name?"
             disabled={isSubmitting}
           />
@@ -47,11 +50,15 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             onBlur={handleBlur}
-            className={`form-input ${errors.email ? 'error' : ''} ${touched.email && !errors.email ? 'valid' : ''}`}
+            className={`form-input ${errors.email ? "error" : ""} ${
+              touched.email && !errors.email ? "valid" : ""
+            }`}
             placeholder="Your email?"
             disabled={isSubmitting}
           />
-          {errors.email && <span className="error-message">{errors.email}</span>}
+          {errors.email && (
+            <span className="error-message">{errors.email}</span>
+          )}
         </div>
 
         <div className="form-group">
@@ -61,11 +68,15 @@ const ContactForm = () => {
             value={formData.phone}
             onChange={handleChange}
             onBlur={handleBlur}
-            className={`form-input ${errors.phone ? 'error' : ''} ${touched.phone && !errors.phone ? 'valid' : ''}`}
+            className={`form-input ${errors.phone ? "error" : ""} ${
+              touched.phone && !errors.phone ? "valid" : ""
+            }`}
             placeholder="Phone"
             disabled={isSubmitting}
           />
-          {errors.phone && <span className="error-message">{errors.phone}</span>}
+          {errors.phone && (
+            <span className="error-message">{errors.phone}</span>
+          )}
         </div>
 
         <div className="form-group">
@@ -74,17 +85,21 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             onBlur={handleBlur}
-            className={`form-textarea ${errors.message ? 'error' : ''} ${touched.message && !errors.message ? 'valid' : ''}`}
+            className={`form-textarea ${errors.message ? "error" : ""} ${
+              touched.message && !errors.message ? "valid" : ""
+            }`}
             placeholder="Your message?"
             rows="4"
             disabled={isSubmitting}
           />
-          {errors.message && <span className="error-message">{errors.message}</span>}
+          {errors.message && (
+            <span className="error-message">{errors.message}</span>
+          )}
         </div>
 
-        <button 
-          type="submit" 
-          className={`submit-btn ${isSubmitting ? 'submitting' : ''}`}
+        <button
+          type="submit"
+          className={`submit-btn ${isSubmitting ? "submitting" : ""}`}
           disabled={isSubmitting}
         >
           {isSubmitting ? (
@@ -93,12 +108,16 @@ const ContactForm = () => {
               Submitting...
             </>
           ) : (
-            'Submit'
+            "Submit"
           )}
         </button>
 
         {submitStatus && (
-          <div className={`submit-status ${submitStatus.includes('Error') ? 'error' : 'success'}`}>
+          <div
+            className={`submit-status ${
+              submitStatus.includes("Error") ? "error" : "success"
+            }`}
+          >
             {submitStatus}
           </div>
         )}

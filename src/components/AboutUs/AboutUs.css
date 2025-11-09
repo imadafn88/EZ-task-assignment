@@ -1,0 +1,308 @@
+.about-us {
+  min-height: 100vh;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-us .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+/* Header */
+.about-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-header h2 {
+  font-family: 'Island Moments', serif;
+  font-size: 60px;
+  font-weight: 400;
+  color: #0F3255;
+  line-height: 100%;
+}
+
+/* Left content */
+.left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 70px auto;
+  flex: 1 1 400px;
+}
+
+.sidetext {
+  max-width: 500px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h5 {
+  font-family: Halant;
+  font-weight: 400;
+  font-size: 25px;
+  margin-bottom: 30px;
+  color: #0F3255;
+}
+
+h6 {
+  max-width: 320px;
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  margin: auto;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Notes section */
+.notes {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 25px;
+  margin-top: 80px;
+  flex-wrap: wrap;
+}
+
+.note {
+  position: relative;
+  width: 200px;
+  transform: rotate(-10deg);
+  transition: all 0.3s ease;
+}
+
+.note img {
+  width: 85%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  filter: sepia(1.1) saturate(2) hue-rotate(-40deg) brightness(0.8);
+}
+
+.note-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+
+.note-text h3 {
+  font-weight: 400;
+  font-size: 50px;
+  margin: 0;
+  color: #103255;
+}
+
+.note-text p {
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 5px;
+  color: #F15D2B;
+}
+
+/* Note positioning */
+.note-1 {
+  z-index: 1;
+  transform: rotate(10deg) translateX(50px);
+}
+
+.note-2 {
+  z-index: 2;
+  margin-left: -30px;
+  transform: rotate(10deg) translateX(10px);
+}
+
+.note-3 {
+  z-index: 3;
+  margin-left: -60px;
+  transform: rotate(10deg);
+}
+
+.note:hover {
+  transform: rotate(-10deg) translateY(-5px);
+}
+
+/* Arc + Mountain images */
+.icons-arc {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  width: 600px;
+  transform: translateY(1%) rotate(-15deg);
+  transform-origin: bottom right;
+  pointer-events: none;
+  scale: 1.2;
+}
+
+.icons-arc img {
+  width: 100%;
+  height: auto;
+}
+
+.mountain-logo {
+  position: absolute;
+  bottom: 0;
+  right: 120px;
+  width: 450px;
+  pointer-events: none;
+}
+
+.mountain-logo img {
+  width: 100%;
+  height: auto;
+}
+
+/* ------------------------------------------------------ */
+/* 📱 RESPONSIVE DESIGN */
+/* ------------------------------------------------------ */
+
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+  .about-us .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .about-header h2 {
+    font-size: 45px;
+  }
+
+  .sidetext h5 {
+    font-size: 22px;
+  }
+
+  .sidetext h6 {
+    font-size: 14px;
+  }
+
+  .notes {
+    gap: 15px;
+    margin-top: 50px;
+  }
+
+  .note {
+    width: 160px;
+  }
+
+  .note-text h3 {
+    font-size: 40px;
+  }
+
+  .note-text p {
+    font-size: 16px;
+  }
+
+  .icons-arc {
+    width: 450px;
+    right: 30px;
+    transform: translateY(3%) rotate(-10deg);
+    scale: 1;
+  }
+
+  .mountain-logo {
+    width: 300px;
+    right: 50px;
+  }
+}
+
+/* Mobiles (768px and below) */
+@media (max-width: 768px) {
+  .about-header h2 {
+    font-size: 36px;
+  }
+
+  .left-container {
+    margin: 40px auto;
+  }
+
+  .sidetext {
+    max-width: 400px;
+  }
+
+  .notes {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  .note {
+    width: 70%;
+    transform: rotate(0deg);
+    margin: 10px 0;
+  }
+
+  .note img {
+    width: 100%;
+  }
+
+  .note-text h3 {
+    font-size: 32px;
+  }
+
+  .note-text p {
+    font-size: 14px;
+  }
+
+  .icons-arc {
+    width: 300px;
+    right: 10px;
+    transform: translateY(10%) rotate(-8deg);
+  }
+
+  .mountain-logo {
+    width: 200px;
+    right: 20px;
+  }
+}
+
+/* Small Mobiles (480px and below) */
+@media (max-width: 480px) {
+  .about-header h2 {
+    font-size: 28px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+
+  h6 {
+    font-size: 13px;
+  }
+
+  .note {
+    width: 85%;
+  }
+
+  .note-text h3 {
+    font-size: 26px;
+  }
+
+  .note-text p {
+    font-size: 12px;
+  }
+
+  .icons-arc {
+    display: none;
+  }
+
+  .mountain-logo {
+    width: 150px;
+    right: 10px;
+  }
+}

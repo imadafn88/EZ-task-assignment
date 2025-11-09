@@ -1,0 +1,155 @@
+/* Portfolio Section */
+.portfolio-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0;
+  text-align: center;
+  background: transparent;
+  overflow: hidden;
+}
+
+
+/* Text styling */
+.portfolio-text h2 {
+  font-family: "Halant", serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.portfolio-text p {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+/* Decorative SVGs */
+.portfolio-left-svg {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.portfolio-right-svg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 220px;
+  opacity: 0.7;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  transform: translate(0, 0);
+}
+
+/* Main image wrapper */
+.portfolio-image-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 800px;
+  width: 90%;
+}
+
+/* Main Image (removed white bg) */
+.portfolio-main-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  background: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Arrows container */
+.arrow-container {
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 120px;
+  background: white; /* vertical white bar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.arrow-container img {
+  width: 24px;
+  height: 24px;
+}
+
+.arrow-container:hover {
+  background: #f2f2f2;
+}
+
+.left-arrow {
+  left: -30px;
+}
+
+.right-arrow {
+  right: -30px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .portfolio-text h2 {
+    font-size: 2rem;
+  }
+  .portfolio-text p {
+    font-size: 1rem;
+  }
+  .portfolio-left-svg {
+    width: 150px;
+    left: 20px;
+  }
+  .portfolio-right-svg {
+    width: 150px;
+  }
+  .arrow-container {
+    width: 50px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-section {
+    padding: 60px 0;
+  }
+  .portfolio-image-wrapper {
+    max-width: 95%;
+  }
+  .arrow-container {
+    width: 40px;
+    height: 80px;
+  }
+  .left-arrow {
+    left: -15px;
+  }
+  .right-arrow {
+    right: -15px;
+  }
+  .portfolio-left-svg {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-text h2 {
+    font-size: 1.6rem;
+  }
+  .portfolio-text p {
+    font-size: 0.95rem;
+  }
+  .arrow-container {
+    width: 35px;
+    height: 70px;
+  }
+}

@@ -1,142 +1,267 @@
 .about-team {
-  padding: 100px 0;
-  background: #f8f9fa;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 4rem;
-  color: #000;
+.sticky-note {
+  position: absolute;
+  top: 80px;
+  left: 100px;
+  width: 400px;
+  padding: 30px;
+  background: #e9e0a1;
+  transform: rotate(-14deg);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+.sticky-note p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .team-content {
-  max-width: 1200px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.india-gate {
+  width: 280px;
+  position: absolute;
+  left: 30px;
+  bottom: 10px;
+}
+
+.india-gate img {
+  width: 100%;
+  height: auto;
+}
+
+.team-roles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.team-image {
+  position: relative;
+  width: 400px;
   margin: 0 auto;
 }
 
-.team-intro h3 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #000;
+.team-silhouettes {
+  width: 100%;
+  height: 300px;
+  background: #103255;
+  border: 2px solid #f15d2b;
+  margin-left: 100px;
 }
 
-.team-intro p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  color: #666;
+.role {
+  position: relative;
+  font-size: 30px;
+  color: #1e293b;
+  font-family: "Island Moments", serif;
 }
 
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin: 3rem 0;
+.branding-experts {
+  margin: 30px 0;
+  font-size: 24px;
+  color: #1e293b;
+  font-family: "Island Moments", serif;
 }
 
-.team-member {
-  text-align: center;
+.cta-text {
+  font-size: 18px;
+  color: #1e293b;
+  margin: 50px 0 20px;
+  font-family: "Instrument Sans", sans-serif;
 }
 
-.member-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: #e0e0e0;
-  margin: 0 auto 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #666;
-}
-
-.member-info h4 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  text-transform: capitalize;
-}
-
-.member-info p {
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.team-divider {
-  height: 1px;
-  background: #ddd;
-  margin: 3rem 0;
-}
-
-.team-expertise {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-  margin-bottom: 3rem;
-}
-
-.expertise-item h4 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: #000;
-}
-
-.expertise-item ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1rem;
-}
-
-.expertise-item li {
-  padding: 0.5rem 0;
-  color: #666;
-}
-
-.portfolio-btn {
-  background: #000;
+.view-portfolio {
+  background: #f15d2b;
   color: white;
   border: none;
-  padding: 15px 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 5px;
+  padding: 12px 30px;
+  border-radius: 4px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
+  font-family: "Instrument Sans", sans-serif;
 }
 
-.portfolio-btn:hover {
-  background: #333;
+.view-portfolio:hover {
+  background: #d84d21;
 }
 
-/* Responsive Design */
+@media (max-width: 1200px) {
+  .sticky-note {
+    left: 60px;
+  }
+  .india-gate {
+    width: 240px;
+    left: 20px;
+  }
+  .container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-team {
+    display: block;
+    padding: 40px 16px 80px;
+  }
+  .sticky-note {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin: 0 auto 28px;
+    width: 92%;
+    max-width: 420px;
+  }
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    text-align: center;
+  }
+  .india-gate {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 220px;
+    margin: 0 auto;
+    order: 2;
+  }
+  .team-content {
+    max-width: 680px;
+    margin: 0 auto;
+    order: 1;
+  }
+  .team-roles {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .team-illustration {
+    width: 220px;
+  }
+  .role {
+    font-size: 24px;
+  }
+  .branding-experts {
+    font-size: 20px;
+  }
+  .cta-text {
+    margin: 28px 0 16px;
+    font-size: 16px;
+  }
+  .view-portfolio {
+    padding: 10px 26px;
+  }
+}
+
 @media (max-width: 768px) {
   .about-team {
-    padding: 80px 0;
+    padding: 30px 14px 60px;
   }
-
-  .section-title {
-    font-size: 2rem;
+  .sticky-note {
+    width: 100%;
+    max-width: 380px;
+    margin-bottom: 22px;
+    padding: 22px;
+    transform: none;
   }
-
-  .team-intro h3 {
-    font-size: 1.5rem;
+  .team-illustration {
+    width: 180px;
   }
-
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .role {
+    font-size: 22px;
+  }
+  .branding-experts {
+    font-size: 18px;
+  }
+  .cta-text {
+    font-size: 15px;
+    margin: 20px 0 14px;
+  }
+  .india-gate {
+    width: 180px;
+    margin-top: 18px;
   }
 }
 
 @media (max-width: 480px) {
-  .team-grid {
-    grid-template-columns: 1fr;
+  .about-team {
+    padding: 24px 12px 48px;
   }
-  
-  .team-expertise {
-    grid-template-columns: 1fr;
+  .sticky-note {
+    width: 96%;
+    padding: 16px;
+    font-size: 14px;
+  }
+  .sticky-note p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .team-illustration {
+    width: 140px;
+  }
+  .role {
+    font-size: 18px;
+  }
+  .branding-experts {
+    font-size: 16px;
+  }
+  .cta-text {
+    font-size: 14px;
+    margin: 16px 0 12px;
+  }
+  .view-portfolio {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+  .india-gate {
+    width: 140px;
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .sticky-note,
+  .india-gate,
+  .team-content {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .india-gate img {
+    max-width: 100%;
+    height: auto;
   }
 }

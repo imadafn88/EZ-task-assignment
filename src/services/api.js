@@ -62,9 +62,6 @@ export const submitContactForm = async (formData) => {
 };
 
 
-
-// Test API connection
-// Test function to check API connectivity
 export const testAPIConnection = async () => {
   try {
     console.log('🔵 [TEST] Testing API connection...');

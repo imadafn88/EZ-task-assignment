@@ -1,114 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap');
+
 .header {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
   position: fixed;
-  width: 100%;
   top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
   z-index: 1000;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 18px 80px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.4s ease;
+  font-family: 'Instrument Sans', sans-serif;
 }
 
-.navbar {
+.nav-container {
+  width: 100%;
+  max-width: 1300px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 0;
 }
 
-.logo h2 {
-  color: #000;
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+.logo {
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 2.5rem;
-  margin: 0;
+.logo.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-  position: relative;
-}
-
-.nav-links a:hover {
-  color: #000;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #000;
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
+.logo img {
+  width: 90px;
+  height: auto;
 }
 
 .hamburger {
-  display: none;
-  flex-direction: column;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.hamburger div {
-  width: 25px;
-  height: 2px;
-  background: #333;
-  margin: 3px 0;
-  transition: 0.3s;
+.menu-toggle-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
+.hamburger:hover .menu-toggle-icon {
+  transform: scale(1.1);
+}
+
+/* Horizontal Menu */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 120px;
+}
+
+.nav-links.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-size: 22px;
+  color: #000;
+  font-weight: 400;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #555;
+  transform: translateY(-2px);
+}
+
+/* Let's Talk button */
+.lets-talk {
+  background: #F15D2B;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #000 !important;
+  transition: all 0.3s ease;
+}
+
+.lets-talk:hover {
+  background: #c11e0f;
+  transform: translateY(-2px);
+}
+
+.msg-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Logo hides smoothly in hero section */
+.header.hide-logo .logo {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .header {
+    padding: 16px 40px;
   }
 
   .nav-links {
-    position: fixed;
-    top: 80px;
-    right: -100%;
-    width: 100%;
-    height: calc(100vh - 80px);
-    background: white;
+    right: 90px;
+    gap: 24px;
+  }
+
+  .nav-links li a {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 2rem;
-    gap: 2rem;
-    transition: right 0.3s ease;
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
   }
 
-  .nav-links.nav-active {
-    right: 0;
+  .nav-links li a {
+    font-size: 18px;
   }
 
-  .nav-links a {
-    font-size: 1.1rem;
-  }
-
-  .toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .toggle .line2 {
-    opacity: 0;
-  }
-
-  .toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
+  .lets-talk {
+    font-size: 18px;
   }
 }
